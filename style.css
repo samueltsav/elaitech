@@ -1,0 +1,349 @@
+/* CSS Variables */
+:root {
+    --color-primary: #003d82;
+    --color-secondary: #0066cc;
+    --color-accent: #ffa500;
+    --background-light: #f5f7fa;
+    --background-dark: #707986;
+    --color-white: #ffffff;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --color-success: #28a745;
+    --border-radius: .5rem;
+}
+
+/* Base CSS */
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    font-size: calc(.5em + .5vw);
+}
+
+#grid {
+    display: grid;
+    grid-template-rows: repeat(7, auto);
+    grid-template-columns: repeat(5, auto);
+    grid-row-gap: 0rem;
+    grid-column-gap: 0rem;
+   
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+h3 {
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+#hero {
+    grid-area: 1 / 1 / 2 / -1;
+    height: 100vh;
+    background-image: linear-gradient(#003d8290, #003d8290),
+		url("/images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--color-white);
+    text-align: center;
+    margin-top: 40vh;
+
+}
+
+.hero-box p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 600px;
+}
+
+.hero-box a {
+    text-decoration: none;
+    background: var(--color-accent);
+    color: var(--color-white);
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+#about {
+    grid-area: 2 / 1 / 3 / -1;
+    background: var(--background-light);
+}
+
+#about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 4rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
+
+#about-container p {
+    width: 80%;
+    text-align: justify;
+}
+
+#services-summary {
+    grid-area: 3 / 1 / 4 / 2;
+    background: var(--background-light);
+    padding:1rem;
+}
+
+#services-summary--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);    
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    margin-top: 7rem;
+}
+
+.services-summary--list {
+    line-height: 2rem;
+    font-size: 1.15rem;
+    list-style: circle;
+}
+
+.services-summary--paragraph {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+
+#projects {
+    grid-area: 3 / 2 / 4 / -1;
+    background: var(--background-light);
+    padding:1rem;
+}
+
+.projects-card--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+   
+}
+
+.projects-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-white);
+    height: 25rem;
+    width: 25rem;
+}
+
+.projects-card--image {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.projects-card--paragraph {
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
+#services {
+    grid-area: 4 / 1 / 5 / -1;
+    background: var(--color-white);
+    padding: var(--container-padding);
+}
+
+#services-card--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+   
+}
+
+.services-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: var(--background-light);
+    height: 20rem;
+    width: 20rem;
+    padding: 1.5rem;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.services-card p {
+    text-align: left;
+}
+
+
+#testimonials {
+    grid-area: 5 / 1 / 6 / -1;
+    background: var(--color-white);
+    padding: 1rem;
+}
+
+.blockquote-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
+blockquote {
+    background-color: var(--background-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    height: 8rem;
+    width: 40%;
+    padding: 1rem;
+    transform: skew(20deg 20deg);
+}
+
+blockquote p {
+    line-height: 1.8rem;
+}
+
+#contact {
+    grid-area: 6 / 1 / 7 / -1;
+    background: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+#contact-form {
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 50%;
+    padding: 3rem;
+    border-radius: var(--border-radius);
+}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form button {
+    width: 80%;
+    padding: .8rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+
+}
+
+#contact-form button {
+    background-color: var(--color-accent);
+}
+
+footer {
+    grid-area: 7 / 1 / 8 / -1;
+    background: var(--text-dark);
+    color: var(--color-white);
+    padding: 3rem;
+}
+
+#footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 20rem;
+}
+#social-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+#social-links a {
+    color: var(--color-white);
+    margin-right: 2rem;
+    font-size: 1.5rem;
+}
+
+#contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem; 
+}
+
+#contact-info p {
+    margin-bottom: 1.8rem;
+}
+
+#contact-info i {
+    margin-right: 1.5rem;
+}
+
+#copyright {
+    text-align: center;
+    margin-top: 3rem;
+}
