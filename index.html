@@ -77,56 +77,61 @@
             </aside>
             <section id="projects">
                 <h2>Our Recent Projects</h2>
-                <div class="projects-card--container">
-                    <div class="projects-card">
-                        <img src="/images/project-1.jpeg" class="projects-card--image" alt="Solar installation" />
-                        <div class="projects-card--paragraph">
-                            <p class="project-description">Location: Dutsa-Alhaji</P>
-                            <p class="project-description">Project Type: Home wiring</P>
-                            <p class="project-description">Completed: OCtober, 2025.</P>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="projects-card">
+                            <img src="/images/project-1.jpeg" class="projects-card--image" alt="Solar installation" />
+                            <div class="projects-card--paragraph">
+                                <p>Location: Dutse-Alhaji</p>
+                                <p>Project Type: Home wiring</p>
+                                <p>Completed: October, 2025</p>
+                            </div>
+                        </div>
+                        <div class="projects-card">
+                            <img src="/images/project-2.jpeg" class="projects-card--image" alt="Solar installation" />
+                            <div class="projects-card--paragraph">
+                                <p>Location: Nyanya</p>
+                                <p>Project Type: Home wiring</p>
+                                <p>Completed: July, 2025</p>
+                            </div>
+                        </div>
+                        <div class="projects-card">
+                            <img src="/images/project-3.jpeg" class="projects-card--image" alt="Solar installation" />
+                            <div class="projects-card--paragraph">
+                                <p>Location: Gwagwalada</p>
+                                <p>Project Type: Home wiring</p>
+                                <p>Completed: May, 2025</p>
+                            </div>
+                        </div>
+                        <div class="projects-card">
+                            <img src="/images/project-4.jpeg" class="projects-card--image" alt="Solar installation" />
+                            <div class="projects-card--paragraph">
+                                <p>Location: Gwagwalada</p>
+                                <p>Project Type: Home wiring</p>
+                                <p>Completed: May, 2025</p>
+                            </div>
+                        </div>
+                        <div class="projects-card">
+                            <img src="/images/project-5.jpeg" class="projects-card--image" alt="Solar installation" />
+                            <div class="projects-card--paragraph">
+                                <p>Location: Gwagwalada</p>
+                                <p>Project Type: Home wiring</p>
+                                <p>Completed: May, 2025</p>
+                            </div>
+                        </div>
+                        <div class="projects-card">
+                            <img src="/images/project-6.jpeg" class="projects-card--image" alt="Solar installation" />
+                            <div class="projects-card--paragraph">
+                                <p>Location: Gwagwalada</p>
+                                <p>Project Type: Home wiring</p>
+                                <p>Completed: May, 2025</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="projects-card">
-                        <img src="images/project-2.jpeg" class="projects-card--image" alt="Solar installation" />
-                        <div class="projects-card--paragraph">
-                            <p class="project-description">Location: Nyanya</P>
-                            <p class="project-description">Project Type: Home wiring</P>
-                            <p class="project-description">Completed: July, 2025.</P>
-                        </div>
-                    </div>
-                    <div class="projects-card">
-                        <img src="images/project-3.jpeg" class="projects-card--image" alt="Solar installation" />
-                        <div class="projects-card--paragraph">
-                            <p class="project-description">Location: Gwagwalada</P>
-                            <p class="project-description">Project Type: Home wiring</P>
-                            <p class="project-description">Completed: May, 2025.</P>
-                        </div>
-                    </div>
-                    <div class="projects-card">
-                        <img src="images/project-4.jpeg" class="projects-card--image" alt="Solar installation" />
-                        <div class="projects-card--paragraph">
-                            <p class="project-description">Location: Dutsa-Alhaji</P>
-                            <p class="project-description">Project Type: Building construction</P>
-                            <p class="project-description">Completed: February, 2025.</P>
-                        </div>
-                    </div>
-                    <div class="projects-card">
-                        <img src="images/project-5.jpeg" class="projects-card--image" alt="Solar installation" />
-                        <div class="projects-card--paragraph">
-                            <p class="project-description">Location: Keffi</P>
-                            <p class="project-description">Project Type: Build construction</P>
-                            <p class="project-description">Completed: December, 2024.</P>
-                        </div>
-                    </div>
-                    <div class="projects-card">
-                        <img src="images/project-6.jpeg" class="projects-card--image" alt="Solar installation" />
-                        <div class="projects-card--paragraph">
-                            <p class="project-description">Location: Kuje</P>
-                            <p class="project-description">Project Type: Home wiring</P>
-                            <p class="project-description">Completed: November, 2024.</P>
-                        </div>
-                    </div>
-                </div> 
+
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
             </section>
             <section id="services">
                 <h2>Our Services</h2>
@@ -189,7 +194,7 @@
                     </blockquote>
                     <blockquote>
                         <p>
-                            "it baffles me to know you actually 
+                            "It baffles me to know you actually 
                             put all this in good shape after a long suffering… 
                             Nice working with you… let’s keep the good relationship going."
                         </p>
@@ -233,8 +238,36 @@
                         </div>
                     </div>
                 </div>
-                <p id="copyright">&copy; 2025 Elai-Tech & Construction | All Rights Reserved</p>
+                <p id="copyright">&copy; 2025 Elai-Tech & Construction | All Rights Reserved.</p>
             </footer>
         </div>
     </body>
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const cards = document.querySelectorAll('.projects-card');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        let index = 0;
+
+        function moveCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prev.addEventListener('click', () => {
+        index = (index - 1 + cards.length) % cards.length;
+        moveCarousel();
+        });
+
+        next.addEventListener('click', () => {
+        index = (index + 1) % cards.length;
+        moveCarousel();
+        });
+
+        // Optional auto-slide every 4 seconds
+        setInterval(() => {
+        index = (index + 1) % cards.length;
+        moveCarousel();
+        }, 5000);
+    </script>
 </html>
