@@ -6,13 +6,8 @@
         <meta http-equiv="refresh" content="60" />
         <title>Elai-Tech & Construction</title>
         <meta name="Author" content="Elai-Tech & Construction Nigeria LTD" />
-        <meta name="Description" content="A trusted name in Nigeria’s 
-                        electrical and civil engineering industry. Based in Nyanya, 
-                        Abuja, specializing in domestic and industrial electrical 
-                        installations, supply of high-quality electrical equipment, 
-                        and a wide range of general construction works, including roads, 
-                        bridges, and infrastructure development." />
-        <meta name="keywords" content="elai-tech, ellaitech, electrical 
+        <meta name="Description" content="A trusted name in Nigeria’s electrical and civil engineering industry. Based in Nyanya, Abuja, specializing in domestic and industrial electrical installations, supply of high-quality electrical equipment and a wide range of general construction works, including roads, bridges, and infrastructure development." />
+        <meta name="keywords" content="elai-tech, ellai-tech, ellaitech, elaitech, electrical 
                         installation, home wiring, industrial wiring, 
                         building construction, road construction, dam construction, 
                         bridge construction, energy, solar, supply" />
@@ -26,7 +21,10 @@
         <div id="grid">
             <header id="hero">
                 <nav id="navbar">
-                    <img src="./images/logo.jpeg" id="logo" alt="logo" />
+                    <div id="logo-container">
+                        <img src="./images/logo.jpeg" id="logo" alt="logo" />
+                        <p id="logo-p"> Elai-Tech & Construction</p>
+                    </div>
                     <ul id="navbar-menu">
                         <li><a href="#">Home</a></li>
                         <li><a href="#about">About Us</a></li>
@@ -228,55 +226,82 @@
                     <button type="submit">Send Message</button>
                 </form>
             </section>
-            <footer>
-                <div id="footer-container">
-                    <div id="social-links">
-                    <h4>Social Links</h4>
-                    <div>
-                        <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i><a/>
-                        <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i><a/>
-                        <a href="#" target="_blank"><i class="fa-brands fa-square-instagram"></i><a/>
-                    </div>
-                    </div>
-                    <div id="contact-info">
-                        <h4>Contact Details</h4>
-                        <div>
-                            <p><i class="fa-solid fa-location-dot"></i>FN1, Road 3, Phase 4, Nyanya, Abuja - Nigeria.</p>
-                            <p><i class="fa-solid fa-phone"></i>+234 8030931030</p>
-                            <p><i class="fa-solid fa-envelope"></i>info@elaitech.com</p>
-                        </div>
-                    </div>
+            <footer class="footer">
+                <div class="footer-container">
+                <div class="footer-container--about">
+                    <h5 class="footer-heading">About Elai-Tech</h5>
+                    <p class="footer-paragraph">
+                        Elai-Tech & Construction is a trusted name in Nigeria’s 
+                        electrical and civil engineering industry 
+                    </p>
+                    <ul class="footer-social">
+                        <li><a href="https://facebook.com/samtsav" target="_blank"><i class="fa-brands fa-facebook"></i><a/></li>
+                        <li><a href="https://x.com/SamuelTsav" target="_blank"><i class="fa-brands fa-twitter"></i><a/></li>
+                        <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-square-instagram"></i><a/></li>
+                        <li><a href="https://linkedin.com/in/samueltsav" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="https://youtube.com/samueltsav" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
                 </div>
-                <p id="copyright">&copy; 2025 Elai-Tech & Construction | All Rights Reserved.</p>
+                <div class="footer-container--links">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#services">Electrical & Electronics</a></li>
+                        <li><a href="#services">Energy Service</a></li>
+                        <li><a href="#services">Electrical Installation</a></li>
+                        <li><a href="#services">Building & Construction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-container--resources">
+                    <h5 class="footer-heading">Resources</h5>
+                    <ul class="footer-resources">
+                        <li>Experienced Professionals</a></li>
+                        <li>Modern Equipment</li>
+                        <li>Timely Delivery Life</li>
+                        <li>And More...</li>
+                    </ul>
+                </div>
+                <div class="footer-container--contact">
+                    <h5 class="footer-heading">Contact Us</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-location-dot"></i>MF1, Road 3, Phase 4, Nyanya, Abuja.</li>
+                        <li><i class="fa-solid fa-phone"></i>(+234) 08030931030</li>
+                        <li><i class="fa-solid fa-envelope"></i>info@elaitech.com</li>
+                        <li><i class="fa-solid fa-clock"></i>Mon - Sat: 8AM - 6PM</li>
+                    </ul>
+                </div>
+                </div>
+                <div class="footer-copyright">
+                <p>&copy Elai-Tech & Construction. All rights reserved. | <a href="#">Privacy policy</a> | <a href="#">Terms of Service</a></p>
+                </div>
             </footer>
-        </div>
+        </div>  
     </body>
-    <script>
-        const track = document.querySelector('.carousel-track');
-        const cards = document.querySelectorAll('.projects-card');
-        const prev = document.querySelector('.prev');
-        const next = document.querySelector('.next');
+        <script>
+            const track = document.querySelector('.carousel-track');
+            const cards = document.querySelectorAll('.projects-card');
+            const prev = document.querySelector('.prev');
+            const next = document.querySelector('.next');
 
-        let index = 0;
+            let index = 0;
 
-        function moveCarousel() {
-        track.style.transform = `translateX(-${index * 100}%)`;
-        }
+            function moveCarousel() {
+            track.style.transform = `translateX(-${index * 100}%)`;
+            }
 
-        prev.addEventListener('click', () => {
-        index = (index - 1 + cards.length) % cards.length;
-        moveCarousel();
-        });
+            prev.addEventListener('click', () => {
+            index = (index - 1 + cards.length) % cards.length;
+            moveCarousel();
+            });
 
-        next.addEventListener('click', () => {
-        index = (index + 1) % cards.length;
-        moveCarousel();
-        });
+            next.addEventListener('click', () => {
+            index = (index + 1) % cards.length;
+            moveCarousel();
+            });
 
-        // Optional auto-slide every 4 seconds
-        setInterval(() => {
-        index = (index + 1) % cards.length;
-        moveCarousel();
-        }, 5000);
-    </script>
+            // Optional auto-slide every 4 seconds
+            setInterval(() => {
+            index = (index + 1) % cards.length;
+            moveCarousel();
+            }, 5000);
+        </script>
 </html>
